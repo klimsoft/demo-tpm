@@ -12,6 +12,11 @@ public class HelloController {
     @Autowired
     HelloService helloService;
 
+    @GetMapping("/")
+    public String index() {
+        return "index.html";
+    }
+
     @GetMapping("/hello")
     @ResponseBody
     public String hello(@RequestParam(defaultValue = "Weekend") String name) {

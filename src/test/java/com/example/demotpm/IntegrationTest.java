@@ -25,14 +25,14 @@ public class IntegrationTest {
         ResponseEntity<String> response = restTemplate.getForEntity(
                 new URL("http://localhost:" + port + "/hello").toString(), String.class);
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals("Hello Weekend", response.getBody());
+        assertEquals("Hello Weekend!", response.getBody());
     }
 
-//    @Test
-//    public void testHelloWithName() throws Exception {
-//        ResponseEntity<String> response = restTemplate.getForEntity(
-//                new URL("http://localhost:" + port + "/hello?name=Ann").toString(), String.class);
-//        assertEquals(HttpStatus.OK, response.getStatusCode());
-//        assertEquals("Hello Ann!", response.getBody());
-//    }
+    @Test
+    public void testHelloWithName() throws Exception {
+        ResponseEntity<String> response = restTemplate.getForEntity(
+                new URL("http://localhost:" + port + "/hello?name=Ann").toString(), String.class);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals("Hello Ann!", response.getBody());
+    }
 }

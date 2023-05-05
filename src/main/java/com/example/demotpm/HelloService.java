@@ -1,8 +1,11 @@
 package com.example.demotpm;
 
-public class HelloService {
-    public String getMessage(String johny) {
+import org.springframework.stereotype.Service;
 
-        return "Hello " + johny + "!";
+@Service
+public class HelloService {
+    public String getMessage(String name) {
+
+        return "Hello " + name + "!";
     }
 }
